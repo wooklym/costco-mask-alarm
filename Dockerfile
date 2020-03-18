@@ -14,7 +14,7 @@ FROM debian:buster-slim
 # install runtime dependencies
 RUN apt-get update && apt-get install -y ca-certificates
 
-COPY --from=build /app/target/release/app .
+COPY --from=build /app/target/release/mask .
 COPY .env .env
 
-CMD ["app"]
+CMD ./mask
