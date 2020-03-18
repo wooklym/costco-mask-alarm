@@ -5,11 +5,6 @@ WORKDIR /app
 
 COPY Cargo.lock Cargo.lock
 COPY Cargo.toml Cargo.toml
-RUN mkdir src && cp src/main.rs
-
-RUN cargo build --release
-RUN rm -r src/*
-
 COPY src src
 
 RUN cargo build --release
